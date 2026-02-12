@@ -10,6 +10,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html, body {
+    overflow-x: hidden;
+}
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,6 +26,8 @@
             padding: 20px;
             position: relative;
             overflow: hidden;
+            overflow-x: hidden;
+
         }
 
         /* Moving gradient background animation */
@@ -488,41 +493,60 @@
             margin: 10px 0;
         }
 
-        /* Responsive design */
-        @media (max-width: 480px) {
-            .weather-card {
-                padding: 30px 25px;
-                max-width: 100%;
-            }
+       @media (max-width: 480px) {
 
-            .city {
-                font-size: 28px;
-            }
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
 
-            .temp {
-                font-size: 60px;
-            }
+    .weather-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+        animation: none;
+        margin: 0 auto;
+    }
 
-            .icon {
-                font-size: 80px;
-            }
+    .city {
+        font-size: 22px;
+    }
 
-            .weather-details {
-                gap: 15px;
-            }
+    .temp {
+        font-size: 48px;
+    }
 
-            .detail-item {
-                padding: 18px;
-            }
+    .icon {
+        font-size: 70px;
+    }
 
-            .detail-value {
-                font-size: 22px;
-            }
+    .weather-details {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 
-            .location-input input {
-                max-width: 150px;
-            }
-        }
+    .detail-item {
+        padding: 15px;
+    }
+
+    .location-input {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .location-input input,
+    .location-input button {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .background-orb {
+        display: none;
+    }
+}
+
 
         /* Loading animation for initial render */
         @keyframes cardEntry {
@@ -744,6 +768,7 @@
         // Initialize
         updateDateTime();
         setInterval(updateDateTime, 1000); // Update time every second
+
 
     </script>
 </body>
