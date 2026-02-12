@@ -559,11 +559,13 @@
                 transform: scale(1) translateY(0);
             }
         }
+        @media (min-width: 840px) {
+    .weather-card {
+        animation: cardEntry 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                   cardFloat 6s ease-in-out 0.8s infinite;
+    }
+}
 
-        .weather-card {
-            animation: cardEntry 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                       cardFloat 6s ease-in-out 0.8s infinite;
-        }
     </style>
 </head>
 <body>
